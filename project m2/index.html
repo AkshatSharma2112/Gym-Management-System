@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Gym Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FitTrack</div>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#members">Members</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h1>Gym Management Dashboard</h1>
+            <div class="dashboard-widgets">
+                <div class="widget">
+                    <i class="fas fa-users"></i>
+                    <h3>Total Members</h3>
+                    <p id="totalMembers">Loading...</p>
+                </div>
+                <div class="widget">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Active Classes</h3>
+                    <p id="activeClasses">Loading...</p>
+                </div>
+                <div class="widget">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Trainers</h3>
+                    <p id="totalTrainers">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="members">
+            <h2>Manage Members</h2>
+            <div class="card">
+                <h3>Add New Member</h3>
+                <form id="addMemberForm">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                    <select id="membershipType" required>
+                        <option value="">Select Membership Type</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                    <button type="submit">Add Member</button>
+                </form>
+            </div>
+            <div class="card">
+                <h3>Members List</h3>
+                <input type="text" id="memberSearch" placeholder="Search members...">
+                <table id="membersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Membership</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="membersList"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="classes">
+            <h2>Gym Classes</h2>
+            <div class="card">
+                <h3>Upcoming Classes</h3>
+                <ul id="classesList">
+                    <!-- Classes will be populated here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="trainers">
+            <h2>Our Trainers</h2>
+            <div class="trainers-grid" id="trainersGrid">
+                <!-- Trainers will be populated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FitTrack Gym Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
